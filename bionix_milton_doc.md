@@ -29,27 +29,41 @@ First, make sure you have correctly set up Nix on Milton according to the instru
 ```{sh}
 $ git clone https://github.com/victorwkb/BioNix-qc-pipe.git
 ```
+
 Then:
 ```{sh}
 $ cd BioNix-qc-pipe/subread-wf/
 ```
+
 To build, run:
 ```{sh}
 $ nix build
 ```
+
 You can see the results with:
 ```{sh}
 $ cat result
 ```
+
 To ensure the result is correct we will compare it with the expected result.
-First access [subread-wf-output.txt](https://wehieduau.sharepoint.com/:t:/r/sites/StudentInternGroupatWEHI/Shared%20Documents/BioNix%20Introduction/subread-wf-output.txt?csf=1&web=1&e=PsQQ7z), and copy all the contents of this file (ctrl-a).
-Then create a new file called `subread-wf-output.txt`, in the `/BioNix-qc-pipe/subread-wf` directory by running:
+A couple of files are required to do this test, you can get them by doing:
 ```{sh}
-$ vim subread-wf-output.txt
+$ git clone --depth 1 https://github.com/dansunwz/Milton-BioNix.git
 ```
-then entering 'insert mode' by pressing 'i', pasting with right-click, deleting the empty last line by exiting 'insert-mode' with the escape key and pressing 'dd' (two lowercase d's), and exiting and saving by pressing 'ZZ' (two capital z's).
-Now run:
+
+Now let's change the directory to the test folder we've just cloned:
 ```{sh}
-$ diff result subread-wf-output.txt
+$ cd Milton-BioNix/Milton_bionix_test/
 ```
-which will compare the result to the expected result. If the last command does not output anything to the terminal, that means the contents of the file are the same and nix has been run successfully.
+
+Give permission to run the shell script by typing in:
+```{sh}
+$ chmod +x test.sh
+```
+Now run the script:
+```{sh}
+$ ./test.sh
+```
+
+After running the script `test.sh`, a prompt will show up in the terminal to tell you whether BioNix is working as intended. If it is not working, please follow the guide from the beginning and try to configure BioNix again.
+
