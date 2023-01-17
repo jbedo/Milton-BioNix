@@ -60,7 +60,7 @@ Build the expression using:
 ```{sh}
 nix build
 ```
-Use `nix build` to test workflows, it will create a symlink to the build result under the `result` directory. In this case, when no path is specificed, `nix build` will build the `default.nix` file in the current directory.
+Use `nix build` to test workflows, it will create a symlink to the build result under the `result` directory. In this case, when no path is specificed, `nix build` will build the `default.nix` file from the flake in the current directory. Nix Flakes allow you to specify code dependencies in the `flake.nix` file. A `flake.lock` file will be generated when you build for the first time, it contains a record of the version of all packages used in this build. Nix Flakes are the key to Nix's high reproducibility. You can read more about Nix Flakes [here](https://nixos.wiki/wiki/Flakes).
 
 <br>
 
