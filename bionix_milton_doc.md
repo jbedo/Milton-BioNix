@@ -44,7 +44,7 @@ To ensure BioNix is working correctly on Milton we will test it with [Kai Bing's
 
 First, make sure you have correctly set up Nix on Milton according to the instructions above, then in your home directory or your preferred location on Milton, run:
 ```{sh}
-git clone -- depth 1 https://github.com/victorwkb/BioNix-qc-pipe.git
+git clone --depth 1 https://github.com/victorwkb/BioNix-qc-pipe.git
 ```
 
 <br>
